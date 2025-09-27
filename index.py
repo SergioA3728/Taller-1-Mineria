@@ -4,20 +4,20 @@ import numpy as np
 import random
 #configs
 n = 500
-np.ramdom.seed(42)
+np.random.seed(42)
 #variales
-Edad= np.ramdom.ramdint(16,30,n)
-Genero= np.ramdon.choice (['M','F'],n)
-Lugar_origen= np.ramdon.choice (['soledad','Sabana larga','Sabana Grande','Baranoa','Barranquilla'],n)
-PM_bachiderato= np.round(np.ramdon.uniform(2.0,5.0,n),2)
-ICFES= np.round(np.ramdon.uniform(200,500,n),2)
-NT_Semestre1= np.round(np.ramdon.uniform(2.0,5.0,n),2)
-Estrato= np.ramdon.choice ([1,2,3,4,5,6],n)
-Beca= np.ramdon.choice (['Si','No'],n)
-Icetex= np.ramdon.choice (['Si','No'],n)
+Edad= np.random.ramdint(16,30,n)
+Genero= np.random.choice (['M','F'],n)
+Lugar_origen= np.random.choice (['soledad','Sabana larga','Sabana Grande','Baranoa','Barranquilla'],n)
+PM_bachiderato= np.round(np.random.uniform(2.0,5.0,n),2)
+ICFES= np.round(np.random.uniform(200,500,n),2)
+NT_Semestre1= np.round(np.random.uniform(2.0,5.0,n),2)
+Estrato= np.random.choice ([1,2,3,4,5,6],n)
+Beca= np.random.choice (['Si','No'],n)
+Icetex= np.random.choice (['Si','No'],n)
 Desercion= np.where((PM_bachiderato<3.0)|(NT_Semestre1<3.0),
-                    np.ramdon.choice (['Si','No'],n,p=[0.7,0.3]), 
-                    np.ramdon.choice (['Si','No'],n,p=[0.2,0.8]))
+                    np.random.choice (['Si','No'],n,p=[0.7,0.3]), 
+                    np.random.choice (['Si','No'],n,p=[0.2,0.8]))
 #Muestra de datos
 df = pd.DataFrame({
     'Edad': Edad,
@@ -31,3 +31,8 @@ df = pd.DataFrame({
     'Credito Academico': Icetex,
     'Desercion': Desercion
 })
+#Datos Faltantes y Outliers
+for col in ['Promedio del Bachiderato','Notas Semestre #1','Estrato']:
+    df.loc[df.random.sample(frac=0.05).index,col]=np.nan
+df.loc[random.sample(range(n), 5), 'Promedio del Bachiderato'] = 10 
+df.loc[random.sample(range(n), 5), 'Edad'] = 45
