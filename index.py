@@ -18,3 +18,16 @@ Icetex= np.ramdon.choice (['Si','No'],n)
 Desercion= np.where((PM_bachiderato<3.0)|(NT_Semestre1<3.0),
                     np.ramdon.choice (['Si','No'],n,p=[0.7,0.3]), 
                     np.ramdon.choice (['Si','No'],n,p=[0.2,0.8]))
+#Muestra de datos
+df = pd.DataFrame({
+    'Edad': Edad,
+    'Genero': Genero,
+    'Lugar Origen': Lugar_origen,
+    'Promedio del Bachiderato': PM_bachiderato,
+    'ICFES': ICFES,
+    'Notas Semestre #1': NT_Semestre1,
+    'Estrato': Estrato,
+    'Beca': Beca,
+    'Credito Academico': Icetex,
+    'Desercion': Desercion
+})
