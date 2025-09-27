@@ -6,7 +6,7 @@ import random
 n = 500
 np.random.seed(42)
 #variales
-Edad= np.random.ramdint(16,30,n)
+Edad= np.random.randint(16,30,n)
 Genero= np.random.choice (['M','F'],n)
 Lugar_origen= np.random.choice (['soledad','Sabana larga','Sabana Grande','Baranoa','Barranquilla'],n)
 PM_bachiderato= np.round(np.random.uniform(2.0,5.0,n),2)
