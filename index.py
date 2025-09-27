@@ -36,3 +36,7 @@ for col in ['Promedio del Bachiderato','Notas Semestre #1','Estrato']:
     df.loc[df.random.sample(frac=0.05).index,col]=np.nan
 df.loc[random.sample(range(n), 5), 'Promedio del Bachiderato'] = 10 
 df.loc[random.sample(range(n), 5), 'Edad'] = 45
+#CSV
+df.to_csv("Dataset_desercion_estudiantil.csv", index=False)
+
+print("Archivo'Dataset_desercion_estudiantil.csv' generado con",len(df),"registros.")
